@@ -10,5 +10,13 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^26.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haohao6683/pos-machine-2020-7-20-13-59-35-216.git"
+  },
+  "bugs": {
+    "url": "https://github.com/haohao6683/pos-machine-2020-7-20-13-59-35-216/issues"
+  },
+  "homepage": "https://github.com/haohao6683/pos-machine-2020-7-20-13-59-35-216#readme"
 }
