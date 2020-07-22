@@ -15,11 +15,11 @@ function dataIsValid(barcodes){//Valid the data.
 }
 
 function getAllReceipt(barcodes){//Combine the String result.
-    var result = "\n***<store earning no money>Receipt ***\n";
-    var objList = getObjCount(barcodes);
-    var totalNum = 0;
-    for(var i = 0; i < objList.length; i++){
-        var eachTotalNum = objList[i].count * objList[i].price;
+    let result = "\n***<store earning no money>Receipt ***\n";
+    let objList = getValidObj(barcodes);
+    let totalNum = 0;
+    for(let i = 0; i < objList.length; i++){
+        let eachTotalNum = objList[i].count * objList[i].price;
         result += "Name: " + objList[i].name +
                   ", Quantity: " + objList[i].count +
                   ", Unit price: " + objList[i].price +
@@ -32,12 +32,12 @@ function getAllReceipt(barcodes){//Combine the String result.
     return result;
 }
 
-function getObjCount(barcodes){//Get the every object count.
-    var objList = new Array();
-    for(var i = 0; i < barcodes.length; i++){
-        var obj = getRelatedObj(barcodes[i]);
+function getValidObj(barcodes){//Get the every object count.
+    let objList = new Array();
+    for(let i = 0; i < barcodes.length; i++){
+        let obj = getRelatedObj(barcodes[i]);
         if(obj != null){
-            var j = 0;
+            let j = 0;
             for(; j < objList.length; j++){
                 if(obj.barcode == objList[j].barcode){
                     objList[j].count++;
@@ -54,9 +54,9 @@ function getObjCount(barcodes){//Get the every object count.
 }
 
 function getRelatedObj(barcode) {//Get the object by barcode.
-    var allObj = loadDatabase();
-    for (var i = 0; i < allObj.length; i++) {
-        var obj = allObj[i];
+    const allObj = loadDatabase();
+    for (let i = 0; i < allObj.length; i++) {
+        let obj = allObj[i];
         if (barcode == obj.barcode) {
             return obj;
         }
